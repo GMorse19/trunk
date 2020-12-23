@@ -1,33 +1,53 @@
 import React from 'react'
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container, Col, Row, Button } from 'react-bootstrap'
 
 import { family } from '../../helpers/families/Family'
 
 import './Home.scss'
 
-const imgJsx = family.map(image => (
-  <Col lg={7} key={image.id}>
-    {
-      <a href='/'>
-      <div className='image-div'>
-        <img className='image' src={image.src} alt={image.family} />
-        </div>
-      </a>
-    }
-  </Col>
-))
+class Home extends React.Component {
+  constructor () {
+    super()
 
-const Home = () => (
-  <Container>
-    <Row className='justify-content-center'>
-      <Col>
-        <p>Home Page</p>
+    this.state = {
+      option1: false,
+    }
+  }
+
+  handleClick = (prevState) => {
+    this.setState({ option: prevState })
+  }
+
+  render () {
+    const imgJsx = family.map(image => (
+      <Col lg={7} key={image.id}>
+        {
+          <div>
+            <Button
+              className='image-div'
+              href={`#option/${image.id}`}
+              props={image}
+            >
+              <img className='image' src={image.src} alt={image.family} />
+            </Button>
+          </div>
+        }
       </Col>
-    </Row>
-    <Row className='justify-content-center'>
-      {imgJsx}
-    </Row>
-  </Container>
-)
+    ))
+
+    return (
+      <Container>
+        <Row className='justify-content-center'>
+          <Col>
+            <p>Home Page</p>
+          </Col>
+        </Row>
+        <Row className='justify-content-center'>
+          {imgJsx}
+        </Row>
+      </Container>
+    )
+  }
+}
 
 export default Home
