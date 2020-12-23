@@ -31,7 +31,7 @@ class OptionPage extends React.Component {
               </Col>
 
               <Col lg={12}>
-                <Button>Photos</Button>
+                <Button href={`#portfolio/${id}`}>Photos</Button>
               </Col>
             </Row>
         </div>
