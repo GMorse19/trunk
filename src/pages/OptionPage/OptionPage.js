@@ -7,6 +7,14 @@ import { family } from '../../helpers/families/Family'
 
 class OptionPage extends React.Component {
 
+  handleCall = event => {
+    window.location.href=`tel:${event.target.value}`;
+  }
+
+  handleMessage = event => {
+    window.open(`sms:${event.target.value}`,'_blank')
+  }
+
   render () {
     const id = (this.props.props.match.params.id) - 1
     return (
@@ -23,11 +31,11 @@ class OptionPage extends React.Component {
           </div>
             <Row className='image-text'>
               <Col lg={12}>
-                <Button>Call</Button>
+                <Button onClick={this.handleCall} value={family[id].phone}>Call</Button>
               </Col>
 
               <Col lg={12}>
-                <Button>Message</Button>
+                <Button onClick={this.handleMessage} value={family[id].phone}>Message</Button>
               </Col>
 
               <Col lg={12}>
