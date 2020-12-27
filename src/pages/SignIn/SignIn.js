@@ -8,7 +8,8 @@ class SignIn extends React.Component {
     super()
 
     this.state = {
-      identifier: ''
+      password: '',
+      username: ''
     }
   }
 
@@ -18,7 +19,7 @@ class SignIn extends React.Component {
 
   handleSubmit = () => {
     console.log('Handle Submit!')
-    
+
   }
 
 
@@ -28,14 +29,25 @@ class SignIn extends React.Component {
         <Row className='justify-content-center'>
         <Col lg={12}>
             <Form onSubmit={this.handleSubmit}>
-              <Form.Group controlId="identifier" className="mt-4">
-                <Form.Label>use email or username</Form.Label>
+              <Form.Group controlId="username" className="mt-4">
+                <Form.Label>Username</Form.Label>
                 <Form.Control
                   autoComplete='off'
                   className="account-info input"
-                  type="identifier"
-                  name="identifier"
-                  placeholder="Login"
+                  type="username"
+                  name="username"
+                  placeholder="Username"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="password" className="mt-4">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  autoComplete='off'
+                  className="account-info input"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
                   onChange={this.handleChange}
                 />
               </Form.Group>

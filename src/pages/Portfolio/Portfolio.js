@@ -33,9 +33,10 @@ class Portfolio extends React.Component {
                     <Row className='justify-content-center'>
                         <p> The ID is: {id}</p>
                     </Row>
-                    <Row className='justify-content-center'> 
+                    <Row className='justify-content-center'>
                         {galleryJsx}
                     </Row>
+                    <Row><Button href='#home'>Home</Button></Row>
                 </Container>
             )
         }
