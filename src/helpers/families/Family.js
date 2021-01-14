@@ -57,5 +57,9 @@ export const family = [{
       id: 3,
       src: process.env.PUBLIC_URL + '/images/family-three/family3.jpg'
     },
+    {
+      id: 4,
+      src: process.env.PUBLIC_URL + '/images/family-three/TheFam.jpg'
+    },
   ]
 }]
