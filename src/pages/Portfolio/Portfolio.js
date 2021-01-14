@@ -20,11 +20,14 @@ class Portfolio extends React.Component {
         let galleryJsx = []
 
         if (gallery) { galleryJsx = gallery.map(gallery => (
-        <Col className='' key={gallery.id}>
+        <Col lg={12} key={gallery.id}>
             {
+              <div>
+              <p>{gallery.id}</p>
                 <div className='image-div'>
                     <img className='image' src={gallery.src} alt={gallery.id} />
                 </div>
+              </div>
             }
         </Col>
         ))}
@@ -36,7 +39,7 @@ class Portfolio extends React.Component {
                     <Row className='justify-content-center'>
                         {galleryJsx}
                     </Row>
-                    <Row><Button href='#home'>Home</Button></Row>
+                    <Row><Button href='/'>Home</Button></Row>
                 </Container>
             )
         }
