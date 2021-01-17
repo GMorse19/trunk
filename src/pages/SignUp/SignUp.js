@@ -1,25 +1,30 @@
 import React from 'react'
 import { Form, Container, Col, Row, Button } from 'react-bootstrap'
 
-import './SignIn.scss'
+import './SignUp.scss'
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
   constructor () {
     super()
 
     this.state = {
       password: '',
+      passwordConfirmation: '',
       username: ''
     }
   }
 
-  handleChange = event => this.setState({
+  handleChange = event => {
+    console.log(event.target.value)
+    this.setState({
     [event.target.name]: event.target.value
   })
+}
 
   handleSubmit = () => {
-    console.log('Handle Submit!')
-
+    if (this.state.username === 'dan') {
+      console.log('Yeehaw!!')
+    }
   }
 
 
@@ -51,16 +56,25 @@ class SignIn extends React.Component {
                   onChange={this.handleChange}
                 />
               </Form.Group>
+              <Form.Group controlId="passwordConfirmation" className="mt-4">
+                <Form.Label>Password Confirmation</Form.Label>
+                <Form.Control
+                  autoComplete='off'
+                  className="account-info input"
+                  type="password"
+                  name="passwordConfirmation"
+                  placeholder="Password Confirmation"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Button href='#home' type='submit'>Submit</Button>
             </Form>
           </Col>
-          <Col>
-            <Button href='#home'>Submit</Button>
-            <Button href='#sign-up'>Sign Up</Button>
-          </Col>
+
         </Row>
       </Container>
     )
   }
 }
 
-export default SignIn
+export default SignUp
