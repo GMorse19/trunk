@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 import OptionPage from './pages/OptionPage/OptionPage'
 import Portfolio from './pages/Portfolio/Portfolio'
 import SignIn from './pages/SignIn/SignIn'
+import SignUp from './pages/SignUp/SignUp'
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
 
         <Route exact path='/'  render={() => (
           <SignIn />
+        )} />
+
+        <Route exact path='/sign-up'  render={() => (
+          <SignUp />
         )} />
 
         <Route path='/option/:id' render={(props) => (
