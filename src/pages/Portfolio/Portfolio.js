@@ -3,6 +3,8 @@ import { Container, Col, Row, Button } from 'react-bootstrap'
 
 import './Portfolio.scss'
 
+import Buttons from '../../components/Buttons/Buttons'
+
 import { family } from '../../helpers/families/Family'
 
 class Portfolio extends React.Component {
@@ -40,6 +42,7 @@ class Portfolio extends React.Component {
                         {galleryJsx}
                     </Row>
                     <Row><Button href='/'>Home</Button></Row>
+                    <Buttons />
                 </Container>
             )
         }
